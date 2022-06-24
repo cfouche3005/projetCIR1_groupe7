@@ -1,3 +1,4 @@
 .idea
 /WEB/node_modules/
 
+/cmake-build-debug/
