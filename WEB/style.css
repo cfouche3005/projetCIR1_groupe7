@@ -2,17 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.corner{
+    @apply order-1 w-24 bg-green-400 h-24 fixed border-black
+}
+.hbar{
+    @apply w-full bg-gray-600 h-28 fixed mx-28 z-20}
+
+.vbar{
+    @apply w-28 bg-gray-600 h-screen fixed z-30
 }
 
-.top-navbar {
-  @apply order-2 flex-initial w-full bg-gray-600 h-28 top-0 fixed}
+.toplc {
+    @apply top-0 left-0 rounded-br-lg mb-4 mr-4
+}
 
-.left-navbar {
-  @apply order-1 flex-initial w-28 bg-gray-600 h-screen}
+.bottomlc {
+    @apply bottom-0 left-0 rounded-tr-lg mt-4 mr-4
+}
+
+.toprc {
+    @apply top-0 right-0 rounded-bl-lg mb-4 ml-4
+}
+.bottomrc {
+    @apply bottom-0 right-0 rounded-tl-lg mt-4 ml-4
+}
+
+.content{
+  @apply bg-black inset-28  fixed w-full h-full z-0
+}
+
+.selectplanet{
+    @apply bg-green-400 rounded-lg w-96 border-gray-400 border-2 inset-y-0 right-0  my-40 mr-10 bg-white fixed z-50 p-8 z-40
+}
+
+.planetname {
+    @apply bg-gray-200 mt-3 text-base capitalize align-middle p-2 text-justify flex justify-between rounded-lg label cursor-pointer label-text hover:bg-black hover:text-white
+}
+
+
+#solar {
+    @apply fixed inset-0 h-full ml-28 z-0
+}

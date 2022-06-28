@@ -10,10 +10,29 @@
     <link href="./style.css" rel="stylesheet">
 </head>
     <body>
-    <div class="flex flex-row flex-wrap">
-        <div class="left-navbar"></div>
-        <div class="top-navbar"></div>
-        <div class="content"></div>
+    <div class="flex h-full w-full ">
+        <div class="hbar top-0 inset-x-0">
+        </div>
+        <div class="vbar left-0 inset-y-0">
+            <div class="corner toplc"></div>
+            <div class="corner bottomlc"></div>
+        </div>
+        <div class="content">
+                <canvas id="solar" width="1000px" height="700px"></canvas>
+        </div>
+        <div class="selectplanet" id="select">
+            <label for="scale"></label><input type="range" min="0" max="100" value="90" class="range" id="scale" name="range" />
+            <label>
+                <input type="checkbox" checked="checked" class="checkbox hidden" name="hidden" />
+            </label>
+        </div>
+        <div class="vbar right-0 inset-y-0">
+            <div class="corner toprc"></div>
+            <div class="corner bottomrc"></div>
+        </div>
+        <div class="hbar inset-x-0 bottom-0">
+
+        </div>
     </div>
 
 
