@@ -18,17 +18,18 @@ function DrawInit(TrajectData){
     console.log(TrajPlanet)
     for (const Name in TrajPlanet){
 
+        // Vérification visibilité de la planète
         const checkbox = document.getElementById(`${Name}check`);
         checkbox.addEventListener("change",function(e) {
             PlanetParams[e.target.id].visible = e.target.checked;
         })
-
+        // Vérification couleur de la planète
         const colorselect = document.getElementById(`${Name}color`);
         colorselect.addEventListener("input", function(e) {
         PlanetParams[`${Name}color`].color = e.target.value;
         })
     }
-
+    // Vérification échelle de la planète
     const range = document.getElementById("scale");
     range.addEventListener("input", function(e){
         Scale = e.target.value/100;
@@ -41,6 +42,7 @@ function DrawInit(TrajectData){
         }
         Scaling = OgScaling*(1-Scale)
     })
+    // Début boucle de dessin
     DrawAll();
 
 }
@@ -60,6 +62,7 @@ function DrawAll() {
     requestAnimationFrame(DrawAll)
 }
 
+// Dessin de la ligne de trajectoire
 function drawTrajectory(context,TrajPlanet,canvas) {
     for (const Name in TrajPlanet){
         if (PlanetParams[`${Name}check`].visible === true){
@@ -77,6 +80,7 @@ function drawTrajectory(context,TrajPlanet,canvas) {
     }
 }
 
+// Dessin du Soleil
 function DrawnSun(context,SunRadius){
     context.save()
     context.strokeStyle = "black";
@@ -88,6 +92,7 @@ function DrawnSun(context,SunRadius){
     context.restore();
 }
 
+// Dessin des planètes
 function DrawnPlanet(context,TrajPlanet,canvas,PlanetRadius,time){
     for (const Name in TrajPlanet){
         if(PlanetParams[`${Name}check`].visible === true){
@@ -103,6 +108,7 @@ function DrawnPlanet(context,TrajPlanet,canvas,PlanetRadius,time){
     }
 }
 
+// Reset du Canvas
 function ClearAll(context,canvas) {
     context.save()
     context.beginPath()
