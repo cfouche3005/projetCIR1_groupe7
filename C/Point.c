@@ -1,17 +1,23 @@
-#include <stdio.h>
 #include <stdlib.h>
+#include <stdio.h>
 #include <stdbool.h>
-#include <string.h>
-
+#include <math.h>
 #include "Point.h"
 
-struct Point* createPoint(struct Vector* r,struct Vector* v,int time ){
-    struct Point* p = malloc(sizeof(struct Point));
-    if(p != NULL){
-        p->r = r;
-        p->v = v;
-        p->time = time;
-        p->next = NULL;
+struct Point* createPoint(struct Vector* r, struct Vector* v, unsigned int time){
+    struct Point* head = malloc(sizeof(struct Point));
+    if(head != NULL){
+        head->r = r;
+        head->v = v;
+        head->time = time;
+        head->next = NULL;
     }
-    return p;
+    return head;
+}
+
+void deletePoint(struct Point** head){
+    deleteVector(&(*head)->r);
+    deleteVector(&(*head)->v);
+    free(*head);
+    *head = NULL;
 }

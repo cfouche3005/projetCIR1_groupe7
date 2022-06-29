@@ -11,7 +11,6 @@ let SunRadius =OgSunRadius*OgScale
 const OgPlanetRadius =5
 let PlanetRadius =OgPlanetRadius*OgScale
 
-// let PlanetParams = {}
 
 function DrawInit(TrajectData){
     time = 0
@@ -19,13 +18,11 @@ function DrawInit(TrajectData){
     console.log(TrajPlanet)
     for (const Name in TrajPlanet){
 
-        // PlanetParams[`${Name}check`] = {visible: true}
         const checkbox = document.getElementById(`${Name}check`);
         checkbox.addEventListener("change",function(e) {
             PlanetParams[e.target.id].visible = e.target.checked;
         })
 
-        // PlanetParams[`${Name}color`]= {color :"#ff0000"};
         const colorselect = document.getElementById(`${Name}color`);
         colorselect.addEventListener("input", function(e) {
         PlanetParams[`${Name}color`].color = e.target.value;
@@ -114,28 +111,5 @@ function ClearAll(context,canvas) {
     context.restore();
 
 }
-
-// function CheckVisible(Name){
-//     const checkbox = document.getElementById(`${Name}check`);
-//     // console.log(checkbox);
-//     let visible;
-//     checkbox.addEventListener("change", function(e) {
-//         if (e.target.checked) {
-//             visible  = true;
-//         }else{
-//             visible = false;
-//         }})
-//     return visible
-// }
-//
-// function SelectColor(Name){
-//     const colorselect = document.getElementById(`${Name}color`)
-//     // console.log(colorselect)
-//     let color = "#000000"
-//     return colorselect.addEventListener("input", function(e) {
-//         color = e.target.value
-//     })
-//     return color
-// }
 
 export {DrawInit}
