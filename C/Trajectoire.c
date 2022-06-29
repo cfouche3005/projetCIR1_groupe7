@@ -72,20 +72,6 @@ void enqueue(struct Queue* q, struct Vector* r, struct Vector* v, unsigned int t
 
 }
 
-
-struct Point* dequeue(struct Queue* q, bool* valid){
-    *valid = true;
-    if(isQueueEmpty(q)){
-        *valid = false;
-        return 0;
-    }
-    else{
-        struct Point* qq = q->l->head;
-        deleteFirst(q->l);
-        return qq;
-    }
-}
-
 unsigned int queueSize(struct Queue* q){
     return q->l->size;
 }

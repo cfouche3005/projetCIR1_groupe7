@@ -35,7 +35,6 @@ void deleteList(struct List** l);
 // Opérations de création de la Queue
 struct Queue* createEmptyQueue();
 void enqueue(struct Queue* q, struct Vector* r, struct Vector* v, unsigned int time, bool* valid);
-struct Point* dequeue(struct Queue* q, bool* valid);
 unsigned int queueSize(struct Queue* q);
 bool isQueueEmpty(struct Queue* q);
 void deleteQueue(struct Queue** q);
