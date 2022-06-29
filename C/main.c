@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdbool.h>
 #include <math.h>
-#include "ALL.h"
+#include "Planete.h"
 
 int main(){
     FILE* file = NULL;
